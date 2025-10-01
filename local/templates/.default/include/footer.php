@@ -87,7 +87,7 @@ B_PROLOG_INCLUDED === true || die();
         class="bi bi-arrow-up-short"></i></a>
 
 <!-- Preloader -->
-<div id="preloader"></div>
+<!-- <div id="preloader"></div> -->
 
 <!-- Vendor JS Files -->
 <script src="/local/templates/.default/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
