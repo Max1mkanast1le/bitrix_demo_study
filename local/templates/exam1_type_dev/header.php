@@ -10,15 +10,16 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/local/templates/.default/include/head
         ?>
 		<div class="page-title dark-background">
 			<div class="container position-relative">
-				<h1>Заголовок страницы</h1>
+				<h1><?$APPLICATION->ShowTitle(); ?></h1>
 				<p><?=$APPLICATION->ShowProperty("page_text_under_title")?></p>
 				<nav class="breadcrumbs">
-					<ol>
-						<li><a href="#">Главная</a></li>
-						<li><a href="#">Раздел 1</a></li>
-						<li><a href="#">Раздел 1.1</a></li>
-						<li class="current">Заголовок страницы</li>
-					</ol>
+					<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "template-dev", Array(
+							"PATH" => "",
+                            "SITE_ID" => "s1",
+                            "START_FROM" => "0",
+                        ),
+                        false
+                    );?>
 				</nav>
 			</div>
 		</div>

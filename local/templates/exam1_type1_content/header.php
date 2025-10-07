@@ -13,13 +13,27 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/local/templates/.default/include/head
         <div class="col-lg-4">
 
             <div class="service-box">
-                <div class="services-list">
-                    <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 1</span></a>
-                    <a href="#" class="active"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 2 -
-                            активный</span></a>
-                    <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 3</span></a>
-                    <a href="#"><i class="bi bi-arrow-right-circle"></i><span>Пункт меню 4</span></a>
-                </div>
+                <?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"content_menu", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "1",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "left",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => "content_menu",
+
+        "CACHE_SELECTED_ITEMS" => "Y"
+	),
+	false
+);?>
             </div>
 
             <div class="service-box">
@@ -46,13 +60,16 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/local/templates/.default/include/head
             <!-- Content Page Title -->
             <div class="page-content-title">
                 <div class="position-relative">
-                    <h1>Заголовок страницы</h1>
+                    <h1><?$APPLICATION->ShowTitle(); ?></h1>
                     <p><?$APPLICATION->ShowProperty("page_text_under_title");?></p>
                     <nav class="breadcrumbs">
-                        <ol>
-                            <li><a href="#">Главная</a></li>
-                            <li><a href="#">О компании</a></li>
-                        </ol>
+                        <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "template-content", Array(
+                        "PATH" => "",
+                            "SITE_ID" => "s1",
+                            "START_FROM" => "0",
+                        ),
+                        false
+                    );?>
                     </nav>
                 </div>
             </div>
