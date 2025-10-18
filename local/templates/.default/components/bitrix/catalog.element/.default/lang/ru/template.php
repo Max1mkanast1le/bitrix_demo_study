@@ -36,3 +36,7 @@ $MESS["CT_BCE_CATALOG_RANGE_MORE"] = "и более";
 $MESS["CT_BCE_CATALOG_RATIO_PRICE"] = "цена за #RATIO#";
 $MESS["CT_BCE_CATALOG_GIFT_BLOCK_TITLE_DEFAULT"] = "Выберите один из подарков к этому товару";
 $MESS["CT_BCE_CATALOG_GIFTS_MAIN_BLOCK_TITLE_DEFAULT"] = "Выберите один из товаров, чтобы получить подарок";
+$MESS["CT_BCE_CATALOG_DETAIL_PROJECT"] = "Проект";
+$MESS["CT_BCE_CATALOG_DETAIL_SERVICIES"] = "Услуги";
+$MESS["CT_BCE_CATALOG_DETAIL_SECTOR"] = "Отрасль";
+$MESS["CT_BCE_CATALOG_DETAIL_COMPANY"] = "Компания";

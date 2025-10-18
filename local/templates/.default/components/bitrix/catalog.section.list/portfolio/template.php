@@ -77,25 +77,21 @@ if (0 < $arResult["SECTIONS_COUNT"])
 				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 				$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
-				if (false === $arSection['PICTURE'])
+				$resizedPicture = false;
+				if (!empty($arSection['PICTURE']['ID']))
 				{
-					$altValue = (string)($arSection['IPROPERTY_VALUES']['SECTION_PICTURE_FILE_ALT'] ?? '');
-					if ($altValue === '')
-					{
-						$altValue = $arSection['NAME'];
-					}
-					$titleValue = (string)($arSection['IPROPERTY_VALUES']['SECTION_PICTURE_FILE_TITLE'] ?? '');
-					if ($titleValue === '')
-					{
-						$titleValue = $arSection['NAME'];
-					}
-					$arSection['PICTURE'] = array(
-						'SRC' => $arCurView['EMPTY_IMG'],
-						'ALT' => $altValue,
-						'TITLE' => $titleValue,
+					$resizedPicture = CFile::ResizeImageGet(
+						$arSection['PICTURE']['ID'],
+						array('width' => 600, 'height' => 400),
+						BX_RESIZE_IMAGE_EXACT,
+						true 
 					);
-					unset($titleValue, $altValue);
 				}
+
+				$pictureSrc = $resizedPicture ? $resizedPicture['src'] : $arCurView['EMPTY_IMG'];
+				$pictureAlt = $arSection['IPROPERTY_VALUES']['SECTION_PICTURE_FILE_ALT'] ?: $arSection['NAME'];
+				$pictureTitle = $arSection['IPROPERTY_VALUES']['SECTION_PICTURE_FILE_TITLE'] ?: $arSection['NAME'];
+
 				?>
 				<div class="col-lg-6">
 					<div class="service-item position-relative">

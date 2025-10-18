@@ -10,7 +10,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/local/templates/.default/include/head
         ?>
 		<div class="page-title dark-background">
 			<div class="container position-relative">
-				<h1><?$APPLICATION->ShowTitle(); ?></h1>
+				<h1><?$APPLICATION->ShowTitle(false); ?></h1>
 				<p><?=$APPLICATION->ShowProperty("page_text_under_title")?></p>
 				<nav class="breadcrumbs">
 					<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "template-dev", Array(

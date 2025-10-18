@@ -4,6 +4,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 use Bitrix\Main\Localization\Loc;
 use Bitrix\Catalog\ProductTable;
 
+Loc::loadMessages(__FILE__);
 /**
  * @global CMain $APPLICATION
  * @var array $arParams
@@ -221,18 +222,18 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 						</div>
 					<div class="col-lg-4">
 						<div class="portfolio-info">
-						<h3>Проект</h3>
+						<h3><?=Loc::GetMessage("CT_BCE_CATALOG_DETAIL_PROJECT")?></h3>
 						<ul>
 							<?if (!empty($arResult['SECTION']['NAME'])):?>
-								<li><strong>Услуги</strong>: <?=$arResult['SECTION']['NAME']?></li>
+								<li><strong><?=Loc::GetMessage("CT_BCE_CATALOG_DETAIL_SERVICIES")?></strong>: <?=$arResult['SECTION']['NAME']?></li>
 							<?endif;?>
 
 								<?if (!empty($arResult['PROPERTIES']['BUSINESS_SECTOR']['VALUE'])):?>
-								<li><strong>Отрасль</strong>: <?=$arResult['PROPERTIES']['BUSINESS_SECTOR']['VALUE']?></li>
+								<li><strong><?=Loc::GetMessage("CT_BCE_CATALOG_DETAIL_SECTOR")?></strong>: <?=$arResult['PROPERTIES']['BUSINESS_SECTOR']['VALUE']?></li>
 							<?endif;?>
 
 								<?if (!empty($arResult['PROPERTIES']['CLIENT_NAME']['VALUE'])):?>
-								<li><strong>Компания</strong>: <?=$arResult['PROPERTIES']['CLIENT_NAME']['VALUE']?></li>
+								<li><strong><?=Loc::GetMessage("CT_BCE_CATALOG_DETAIL_COMPANY")?></strong>: <?=$arResult['PROPERTIES']['CLIENT_NAME']['VALUE']?></li>
 							<?endif;?>
 							
 						</ul>

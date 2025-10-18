@@ -28,17 +28,44 @@ use Bitrix\Main\Localization\Loc;
  * @var string $labelPositionClass
  * @var CatalogSectionComponent $component
  */
+
+$item = $arResult['ITEM'];
+$areaId = $arResult['AREA_ID']; 
+
+$resizedPicture = false;
+$pictureId = $item['PREVIEW_PICTURE']['ID'] ?? $item['DETAIL_PICTURE']['ID'];
+
+if ($pictureId)
+{
+    $resizedPicture = CFile::ResizeImageGet(
+        $pictureId,
+        array('width' => 416, 'height' => 416),
+        BX_RESIZE_IMAGE_EXACT, 
+        true
+    );
+}
+
+$pictureSrc = $resizedPicture ? $resizedPicture['src'] : $this->GetFolder().'/images/no_photo.png';
+$pictureAlt = $item['PREVIEW_PICTURE']['ALT'] ?? $item['NAME'];
+$pictureTitle = $item['PREVIEW_PICTURE']['TITLE'] ?? $item['NAME'];
+
 ?>
 
 
-					<div class="col-lg-4">
+					<div class="col-lg-4" id="<?=$areaId?>">
 						<article>
 							<div class="post-img">
-								<img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt="" class="img-fluid">
+								<a href="<?=$item['DETAIL_PAGE_URL']?>">
+									<img src="<?=$pictureSrc?>" alt="<?=$pictureAlt?>" title="<?=$pictureTitle?>" class="img-fluid">
+								</a>
 							</div>
 							<div class="card-body">
-								<h5 class="title"><a href="<?=$item['DETAIL_PAGE_URL']?>"><?=$productTitle?></a></h5>
-								<p class="card-text"><?=$item['PREVIEW_TEXT']?></p>
+								<h5 class="title">
+									<a href="<?=$item['DETAIL_PAGE_URL']?>"><?=$item['NAME']?></a>
+								</h5>
+								<?if (!empty($item['PREVIEW_TEXT'])): ?>
+									<p class="card-text"><?=$item['PREVIEW_TEXT']?></p>
+								<?endif;?>
 							</div>
 						</article>
 					</div>
