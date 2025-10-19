@@ -1,6 +1,8 @@
 <?php 
 B_PROLOG_INCLUDED === true || die();
 
+use Bitrix\Main\Localization\Loc;
+
 ?>
 
 </main>
@@ -11,13 +13,18 @@ B_PROLOG_INCLUDED === true || die();
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-6">
-                    <h4>Поиск</h4>
-                    <form action="#" method="post">
-                        <div class="search-form">
-                            <input class="input-seach" type="text" name="q">
-                            <input class="button-seach" name="s" type="submit" value="Найти">
-                        </div>
-                    </form>
+                    <h4><?=Loc::getMessage("SEARCH_TITLE")?></h4>
+                    <?$APPLICATION->IncludeComponent(
+	"bitrix:search.form", 
+	".default", 
+	array(
+		"PAGE" => "#SITE_DIR#search/",
+		"USE_SUGGEST" => "N",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+);?>
+                    
                 </div>
             </div>
         </div>
