@@ -41,6 +41,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Статистика", 
+		"/statistic_na/", 
+		Array(), 
+		Array(), 
+		"CSite::InGroup(array(1,7))" 
 	)
 );
 ?>
