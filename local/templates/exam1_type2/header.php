@@ -31,6 +31,7 @@ define("TEMPLATE_PATH",'/local/templates/exam1_type2');
 </head>
 
 <body>
+
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -93,94 +94,22 @@ define("TEMPLATE_PATH",'/local/templates/exam1_type2');
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
-    <ul class="sidebar-nav" id="sidebar-nav">
-
-      <li class="nav-item">
-        <a class="nav-link" href="dashboard.html">
-          <i class="bi bi-grid"></i>
-          <span>Дашборд</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#main-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Основные</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="main-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Отчеты</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables.html">
-              <i class="bi bi-circle"></i><span>Данные</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#add-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-files"></i><span>Дополнительные</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="add-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Базы</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Информация</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#sample-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Пример раздела</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="sample-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Пример пункта</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Пример пункта</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Пример пункта</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Пример пункта</span>
-            </a>
-          </li>
-        </ul>        
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="profile.html">
-          <i class="bi bi-person"></i>
-          <span>Профиль</span>
-        </a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="blank.html">
-          <i class="bi bi-file-earmark"></i>
-          <span>Пустая страница</span>
-        </a>
-      </li>
-
-    </ul>
+    <?$APPLICATION->IncludeComponent(
+    "bitrix:menu",
+    "statistic_menu",
+    Array(
+      "ALLOW_MULTI_SELECT" => "Y",
+      "CHILD_MENU_TYPE" => "st_second",
+      "DELAY" => "N",
+      "MAX_LEVEL" => "2",
+      "MENU_CACHE_GET_VARS" => array(""),
+      "MENU_CACHE_TIME" => "3600",
+      "MENU_CACHE_TYPE" => "A",
+      "MENU_CACHE_USE_GROUPS" => "Y",
+      "ROOT_MENU_TYPE" => "st_first",
+      "USE_EXT" => "N"
+    )
+  );?>
 
   </aside><!-- End Sidebar-->
 
