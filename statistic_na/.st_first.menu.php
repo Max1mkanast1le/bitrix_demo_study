@@ -25,7 +25,7 @@ $aMenuLinks = Array(
 		"Профиль", 
 		"/statistic_na/profile/", 
 		Array(), 
-		Array("menu_ico"=>"bi-layout-text-window-reverse"), 
+		Array("menu_ico"=>"bi-person"), 
 		"" 
 	)
 );

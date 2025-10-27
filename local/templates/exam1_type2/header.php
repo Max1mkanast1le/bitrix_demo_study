@@ -36,7 +36,7 @@ define("TEMPLATE_PATH",'/local/templates/exam1_type2');
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="dashboard.html" class="logo d-flex align-items-center">
+      <a href="/statistic_na/" class="logo d-flex align-items-center">
         <img src="<?=TEMPLATE_PATH?>/assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">Статистика</span>
       </a>
@@ -61,7 +61,7 @@ define("TEMPLATE_PATH",'/local/templates/exam1_type2');
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="/statistic_na/profile/">
                 <i class="bi bi-person"></i>
                 <span>Мой профиль</span>
               </a>
