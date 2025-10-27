@@ -31,21 +31,21 @@ $APPLICATION->SetTitle("Данные - ". $arResult["NAME"]);
     <div class="col-lg-12">
         <div class="card table-detail">
             <div class="card-body">
-                <h5 class="card-title">ID - <?=$arResult["NAME"]?></h5>
+                <h5 class="card-title"><?=GetMessage("NAME_TITLE") . " - " . $arResult["NAME"]?></h5>
                 <div class="row">
-                  <div class="col-2 label">Товар</div>
+                  <div class="col-2 label"><?=GetMessage("PRODUCT_TITLE")?></div>
                   <div class="col-4 "><?=$arResult["PROPERTIES"]["PRODUCT"]["VALUE"]?></div>
                 </div>
                 <div class="row">
-                  <div class="col-2 label">Категория</div>
+                  <div class="col-2 label"><?=GetMessage("PRODUCT_CATEGORY_TITLE")?></div>
                   <div class="col-4 "><?=$arResult["PROPERTIES"]["PRODUCT_CATEGORY"]["VALUE"]?></div>
                 </div>
                 <div class="row">
-                  <div class="col-2 label">Город</div>
+                  <div class="col-2 label"><?=GetMessage("CITY_TITLE")?></div>
                   <div class="col-4 "><?=$arResult["PROPERTIES"]["CITY"]["VALUE"]?></div>
                 </div>
                 <div class="row">
-                  <div class="col-2 label">Количество</div>
+                  <div class="col-2 label"><?=GetMessage("QUANTITY_TITLE")?></div>
                   <div class="col-4 "><?=$arResult["PROPERTIES"]["QUANTITY"]["VALUE"]?></div>
                 </div>
                 <div class="backurl">
