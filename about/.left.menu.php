@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"История", 
+		"/about/history/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Команда", 
+		"/about/team/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Присоединиться", 
+		"/about/join/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"test", 
+		"/about/test/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
