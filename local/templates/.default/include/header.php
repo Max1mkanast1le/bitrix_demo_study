@@ -40,36 +40,25 @@ require_once $_SERVER["DOCUMENT_ROOT"]."/local/templates/.default/include/boot.p
 				<h1 class="sitename"><?=GetMessage('HEADER_TITLE');?></h1>
 			</a>
 
-			<nav id="navmenu" class="navmenu">
-				<ul>
-					<li><a href="#">Главная</a></li>
-					<li><a href="#">Пункт 1</a></li>
-					<li><a href="#">Пункт 1</a></li>
-					<li><a href="#">Пункт 3</a></li>
-					<li><a href="#">Пункт 4</a></li>
-					<li class="dropdown">
-						<a href="#"><span>Пункт 5 с подменю</span>
-							<i class="bi bi-chevron-down toggle-dropdown"></i>
-						</a>
-						<ul>
-							<li><a href="#">Пункт 1</a></li>
-							<li class="dropdown"><a href="#"><span>Пункт 2 с подменю</span> <i
-										class="bi bi-chevron-down toggle-dropdown"></i></a>
-								<ul>
-									<li><a href="#">Пункт 1</a></li>
-									<li><a href="#">Пункт 2</a></li>
-									<li><a href="#">Пункт 3</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Пункт 2</a></li>
-							<li><a href="#">Пункт 3</a></li>
-							<li><a href="#">Пункт 4</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Пункт 6</a></li>
-				</ul>
-				<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-			</nav>
+
+            <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
+	"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"MAX_LEVEL" => "3",	// Уровень вложенности меню
+		"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+			0 => "",
+		),
+		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+		"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+	),
+	false
+);?>
+
+			
 
 		</div>
 	</header>

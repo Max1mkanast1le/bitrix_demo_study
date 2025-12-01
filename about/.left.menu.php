@@ -4,14 +4,14 @@ $aMenuLinks = Array(
 		"История", 
 		"/about/history/", 
 		Array(), 
-		Array(), 
+		Array("menu_ico"=>"bi-bookshelf"), 
 		"" 
 	),
 	Array(
 		"Команда", 
 		"/about/team/", 
 		Array(), 
-		Array(), 
+		Array("menu_ico"=>"bi-people"), 
 		"" 
 	),
 	Array(
