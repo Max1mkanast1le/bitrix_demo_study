@@ -1,5 +1,13 @@
 <?php
 $arUrlRewrite=array (
+  3 => 
+  array (
+    'CONDITION' => '#^/portfolio/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/portfolio/index.php',
+    'SORT' => 100,
+  ),
   1 => 
   array (
     'CONDITION' => '#^/products/#',

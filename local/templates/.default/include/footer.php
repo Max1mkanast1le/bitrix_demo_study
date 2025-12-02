@@ -7,13 +7,17 @@
 			<div class="container">
 				<div class="row justify-content-center text-center">
 					<div class="col-lg-6">
-						<h4>Поиск</h4>
-						<form action="#" method="post">
-							<div class="search-form">
-								<input class="input-seach" type="text" name="q">
-								<input class="button-seach" name="s" type="submit" value="Найти">
-							</div>
-						</form>
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:search.form", 
+						"dev", 
+						array(
+							"PAGE" => "/search/",
+							"USE_SUGGEST" => "N",
+							"COMPONENT_TEMPLATE" => "dev"
+						),
+						false
+					);?>
+						
 					</div>
 				</div>
 			</div>

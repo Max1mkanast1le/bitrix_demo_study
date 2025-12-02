@@ -10,20 +10,12 @@ if(Application::GetInstance()->GetContext()->getRequest()->getRequestedPageDirec
         <h1><?=$APPLICATION->ShowTitle(false)?></h1>
         <p><?=$APPLICATION->ShowProperty("page_text_under_title")?></p>
         <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "nav_dev", Array(
-	"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
-		"SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
-		"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
-	),
-	false
-);?>
-        <nav class="breadcrumbs">
-            <ol>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Раздел 1</a></li>
-                <li><a href="#">Раздел 1.1</a></li>
-                <li class="current">Заголовок страницы</li>
-            </ol>
-        </nav>
+            "PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+                "SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+                "START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+            ),
+            false
+        );?>
     </div>
 </div><!-- End Page Title -->
 <?endif?>
