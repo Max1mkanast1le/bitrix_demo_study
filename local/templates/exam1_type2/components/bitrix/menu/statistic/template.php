@@ -37,7 +37,7 @@ foreach($arResult as $arItem):?>
 
 		<?if ($arItem["DEPTH_LEVEL"] == 1):?>
 			<?if ($arItem["SELECTED"] == 1):?>
-				<li>
+				<li class="nav-item">
 					<a class="nav-link" href="<?=$arItem["LINK"]?>">
 					<i class="<?=htmlspecialcharsbx($arItem["PARAMS"]["menu_ico"] ?? "bi bi-layout-text-window-reverse")?>"></i>
 					<span>
@@ -46,7 +46,7 @@ foreach($arResult as $arItem):?>
 					</a>
 				</li>
 			<?else:?>
-				<li>
+				<li class="nav-item">
 					<a class="nav-link collapsed" href="<?=$arItem["LINK"]?>">
 					<i class="<?=htmlspecialcharsbx($arItem["PARAMS"]["menu_ico"] ?? "bi bi-layout-text-window-reverse")?>"></i>
 					<span>

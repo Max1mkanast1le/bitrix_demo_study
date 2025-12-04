@@ -21,13 +21,11 @@
   <!-- Template Main CSS File -->
   <link href="<?=TEMPLATE_PATH?>assets/css/style.css" rel="stylesheet">
 
-  <?$APPLICATION->ShowHead();?>
 
 </head>
 
 <body>
 
-<div id='panel'><?$APPLICATION->ShowPAnel();?></div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
