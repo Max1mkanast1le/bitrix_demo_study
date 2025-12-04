@@ -2,28 +2,28 @@
 $aMenuLinks = Array(
 	Array(
 		"Дашборд", 
-		"/statistc_na/dashboard/", 
+		"/statistic_na/dashboard/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Основные", 
-		"/statistc_na/main/", 
+		"/statistic_na/main/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Дополнительные", 
-		"/statistc_na/extra/", 
+		"/statistic_na/extra/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Профиль", 
-		"/statistc_na/profile/", 
+		"/statistic_na/profile/", 
 		Array(), 
 		Array(), 
 		"" 

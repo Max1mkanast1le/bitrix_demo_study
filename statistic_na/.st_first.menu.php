@@ -2,30 +2,30 @@
 $aMenuLinks = Array(
 	Array(
 		"Дашборд", 
-		"/statistc_na/dashboard/", 
+		"/statistic_na/dashboard/", 
 		Array(), 
-		Array(), 
+		Array("menu_ico"=>"bi bi-grid"), 
 		"" 
 	),
 	Array(
 		"Основные", 
-		"/statistc_na/main/", 
+		"/statistic_na/main/", 
 		Array(), 
-		Array(), 
+		Array("menu_ico"=>"bi bi-menu-button-wide", "nav_id"=>"main-nav"), 
 		"" 
 	),
 	Array(
 		"Дополнительные", 
-		"/statistc_na/extra/", 
+		"/statistic_na/extra/", 
 		Array(), 
-		Array(), 
+		Array("menu_ico"=>"bi bi-files", "nav_id"=>"add-nav"), 
 		"" 
 	),
 	Array(
 		"Профиль", 
-		"/statistc_na/profile/", 
+		"/statistic_na/profile/", 
 		Array(), 
-		Array(), 
+		Array("menu_ico"=>"bi bi-person"), 
 		"" 
 	)
 );
