@@ -1,5 +1,8 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<?define("TEMPLATE_PATH",'/local/templates/exam1_type2/');?>
+<?define("TEMPLATE_PATH",'/local/templates/exam1_type2/');
+use Bitrix\Main\Page\Asset;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,16 +15,24 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?=TEMPLATE_PATH?>assets/img/favicon.png" rel="icon">
+  <link href="<?=SITE_TEMPLATE_PATH?>/assets/img/favicon.png" rel="icon">
 
   <!-- Vendor CSS Files -->
-  <link href="<?=TEMPLATE_PATH?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="<?=TEMPLATE_PATH?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <?
+  Asset::GetInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/vendor/bootstrap/css/bootstrap.min.css");
+  Asset::GetInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/vendor/bootstrap-icons/bootstrap-icons.css");
+  ?>
 
   <!-- Template Main CSS File -->
-  <link href="<?=TEMPLATE_PATH?>assets/css/style.css" rel="stylesheet">
+  <?Asset::GetInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/css/style.css");?>
 
+    <!-- Vendor JS Files -->
+    <?Asset::GetInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");?>
 
+  <!-- Template Main JS File -->
+  <?Asset::GetInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/main.js");?>
+
+  <?$APPLICATION->ShowHead();?>
 </head>
 
 <body>

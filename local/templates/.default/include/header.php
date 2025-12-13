@@ -1,7 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-require_once $_SERVER["DOCUMENT_ROOT"]."/local/templates/.default/include/boot.php"
-
+require_once ($_SERVER["DOCUMENT_ROOT"]."/local/templates/.default/include/boot.php");
+use Bitrix\Main\Page\Asset;
 ?>
 
 <!DOCTYPE html>
@@ -17,16 +17,27 @@ require_once $_SERVER["DOCUMENT_ROOT"]."/local/templates/.default/include/boot.p
 
 	<!-- Favicons -->
 	<link href="<?=DEFAULT_TEMPLATE_PATH?>assets/img/favicon.png" rel="icon">
-	<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+	<link href="<?=DEFAULT_TEMPLATE_PATH?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 	<!-- Vendor CSS Files -->
-	<link href="<?=DEFAULT_TEMPLATE_PATH?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="<?=DEFAULT_TEMPLATE_PATH?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-	<link href="<?=DEFAULT_TEMPLATE_PATH?>assets/vendor/aos/aos.css" rel="stylesheet">
+	<?
+	Asset::GetInstance()->addCss(DEFAULT_TEMPLATE_PATH . "assets/vendor/bootstrap/css/bootstrap.min.css");
+	Asset::GetInstance()->addCss(DEFAULT_TEMPLATE_PATH . "assets/vendor/bootstrap-icons/bootstrap-icons.css");
+	Asset::GetInstance()->addCss(DEFAULT_TEMPLATE_PATH . "assets/vendor/aos/aos.css");
+	?>
 
 	<!-- Main CSS File -->
-	<link href="<?=DEFAULT_TEMPLATE_PATH?>assets/css/main.css" rel="stylesheet">
-    
+	<?Asset::GetInstance()->addCss(DEFAULT_TEMPLATE_PATH . "assets/css/main.css");?>
+
+	<!-- Vendor JS Files -->
+	<?
+	Asset::GetInstance()->addJs(DEFAULT_TEMPLATE_PATH . "assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
+	Asset::GetInstance()->addJs(DEFAULT_TEMPLATE_PATH . "assets/vendor/aos/aos.js");
+	?>
+
+	<!-- Main JS File -->
+	<?Asset::GetInstance()->addJs(DEFAULT_TEMPLATE_PATH . "assets/js/main.js");?>
+
     <?$APPLICATION->ShowHead();?>
 </head>
 
